@@ -1,0 +1,88 @@
+html, body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    z-index: 0;
+}
+.clean-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: white;
+    text-shadow: 0 0 10px #000000, 0 1px 3px rgba(0,0,0,0.8);
+    user-select: none;
+    padding: 14px 24px;
+    padding-bottom: max(14px, env(safe-area-inset-bottom, 15px));
+    padding-left: max(24px, env(safe-area-inset-left, 25px));
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: 1;
+    min-height: 48px;
+    min-width: 140px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 0;
+}
+
+.name {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 4vw;
+    text-shadow: 0 0 5px #000000;
+    user-select: none;
+    pointer-events: none;
+}
+
+@media all and (min-width: 640px) {
+    .name {
+        font-size: 45px;
+    }
+    .clean-btn {
+        padding: 0 20px 15px 25px;
+        padding-bottom: 15px;
+        padding-left: 25px;
+        opacity: .6;
+        min-height: 0;
+        min-width: 0;
+        background: transparent;
+    }
+}
+
+@media all and (max-width: 639px) {
+    .clean-btn {
+        font-size: 17px;
+        font-weight: 600;
+        padding: 14px 24px;
+        padding-bottom: max(14px, env(safe-area-inset-bottom, 0px));
+        padding-left: max(24px, env(safe-area-inset-left, 0px));
+    }
+}
